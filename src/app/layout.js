@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Calytra App",
-  description: "Platis Domus By Stacey",
+  description: "Fruits",
 };
 
 export default function RootLayout({ children }) {

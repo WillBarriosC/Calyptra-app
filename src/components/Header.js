@@ -12,7 +12,7 @@ export default function Header({ scrollHandler }) {
             <Image
               priority
               fill
-              className="h-full w-full "
+              className="h-full w-full"
               src={img}
               placeholder="blur"
               alt="Cover"

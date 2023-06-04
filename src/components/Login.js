@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Button, Text, Input, Row, Checkbox } from "@nextui-org/react";
+import { Modal, Text, Input, Row, Checkbox } from "@nextui-org/react";
 import { Mail } from "../helpers/Mail";
 import { Password } from "../helpers/Password";
 
@@ -13,8 +13,11 @@ export default function App() {
   };
 
   return (
-    <div>
-      <button className= "flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-4 py-3 text-base font-medium text-gray-800 shadow-sm hover:bg-gray-300 sm:px-8" onClick={handler}>
+    <>
+      <button
+        className="flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-4 py-3 text-base font-medium text-gray-800 shadow-sm hover:bg-gray-300 sm:px-8"
+        onClick={handler}
+      >
         Login
       </button>
       <Modal
@@ -58,14 +61,20 @@ export default function App() {
           </Row>
         </Modal.Body>
         <Modal.Footer>
-          <Button auto flat color="error" onPress={closeHandler}>
+          <button
+            className="flex items-center justify-center rounded-md border border-transparent bg-red-100 px-4 py-3 text-base font-medium text-red-600 shadow-sm hover:bg-red-300 sm:px-8"
+            onClick={closeHandler}
+          >
             Close
-          </Button>
-          <Button auto onPress={closeHandler}>
-            Sign in
-          </Button>
+          </button>
+          <button
+            className="flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-4 py-3 text-base font-medium text-gray-800 shadow-sm hover:bg-gray-300 sm:px-8"
+            onClick={closeHandler}
+          >
+            Sign In
+          </button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </>
   );
 }

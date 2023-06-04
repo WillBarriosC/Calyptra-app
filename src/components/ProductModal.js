@@ -18,7 +18,6 @@ export default function ProductModal({ product, onClose }) {
         </Text>
       </Modal.Header>
       <Image
-        showSkeleton
         width={640}
         height={360}
         src={"https://nextui.org" + product.img}

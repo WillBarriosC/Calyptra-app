@@ -3,9 +3,7 @@ import Login from "@/components/Login";
 
 export default function App() {
   const collapseItems = [
-    "Features",
     "Customers",
-    "Pricing",
     "Company",
     "Legal",
     "Team",
@@ -14,7 +12,7 @@ export default function App() {
 
   return (
     <>
-      <Navbar isCompact isBordered variant="static">
+      <Navbar shouldHideOnScroll isBordered variant="sticky">
         <Navbar.Brand>
           <Navbar.Toggle aria-label="toggle navigation" />
           <Navbar.Content>
@@ -25,7 +23,7 @@ export default function App() {
           <Login />
         </Navbar.Content>
         <Navbar.Collapse>
-          {collapseItems.map((item, index) => (
+          {collapseItems.map((item) => (
             <Navbar.CollapseItem key={item}>
               <Link
                 color="inherit"
