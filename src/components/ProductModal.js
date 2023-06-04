@@ -48,12 +48,18 @@ export default function ProductModal({ product, onClose }) {
       </Modal.Body>
 
       <Modal.Footer justify="center">
-        <Button auto onPress={onClose}>
+        <button
+          className="flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-4 py-3 text-base font-medium text-gray-800 shadow-sm hover:bg-gray-300 sm:px-8"
+          onClick={onClose}
+        >
           Buy Now
-        </Button>
-        <Button auto onPress={onClose}>
-          Add to Cart
-        </Button>
+        </button>
+        <button
+          className="flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-4 py-3 text-base font-medium text-gray-800 shadow-sm hover:bg-gray-300 sm:px-8"
+          onClick={onClose}
+        >
+          Add To Cart
+        </button>
       </Modal.Footer>
     </Modal>
   );
