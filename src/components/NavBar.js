@@ -12,17 +12,22 @@ export default function App() {
 
   return (
     <>
-      <Navbar shouldHideOnScroll isBordered variant="sticky">
-        <Navbar.Brand>
-          <Navbar.Toggle aria-label="toggle navigation" />
-          <Navbar.Content>
-            <Text b>CALYPTRA</Text>
-          </Navbar.Content>
-        </Navbar.Brand>
+      <Navbar
+        isCompact
+        isBordered
+        variant="static"
+        maxWidth="fluid"
+        borderWeight="black"
+      >
+        <Navbar.Toggle aria-label="toggle navigation" />
+        <Navbar.Content>
+          <Text b>CALYPTRA</Text>
+        </Navbar.Content>
+
         <Navbar.Content>
           <Login />
         </Navbar.Content>
-        <Navbar.Collapse>
+        <Navbar.Collapse transitionTime={1000}>
           {collapseItems.map((item) => (
             <Navbar.CollapseItem key={item}>
               <Link

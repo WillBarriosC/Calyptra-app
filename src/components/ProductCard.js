@@ -17,11 +17,11 @@ export default function ProductCard({ searchValue }) {
   };
 
   return (
-    <Grid.Container gap={2} justify="flex-start">
+    <Grid.Container gap={2} justify="flex-start" >
       {filteredList !== null && filteredList.length > 0 ? (
         filteredList.map((item, index) => (
           <Grid xs={6} sm={3} key={index}>
-            <Card isPressable onPress={() => handleCardPress(item)}>
+            <Card isPressable onPress={() => handleCardPress(item)} css={{}}>
               <Card.Body css={{ p: 0 }}>
                 <Card.Image
                   src={"https://nextui.org" + item.img}
