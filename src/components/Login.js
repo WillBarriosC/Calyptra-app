@@ -1,15 +1,14 @@
-import React from "react";
+import { useState } from "react";
 import { Modal, Text, Input, Row, Checkbox } from "@nextui-org/react";
 import { Mail } from "../helpers/Mail";
 import { Password } from "../helpers/Password";
 
-export default function App() {
-  const [visible, setVisible] = React.useState(false);
+export default function Login() {
+  const [visible, setVisible] = useState(false);
   const handler = () => setVisible(true);
 
   const closeHandler = () => {
     setVisible(false);
-    console.log("closed");
   };
 
   return (

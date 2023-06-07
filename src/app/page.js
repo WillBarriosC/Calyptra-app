@@ -9,10 +9,9 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   const [searchValue, setSearchValue] = useState("");
-  let plantRef = useRef();
+  const plantRef = useRef();
 
   const scrollHandler = (e) => {
-    e.preventDefault();
     plantRef.current.scrollIntoView({
       behavior: "smooth",
       block: "start",

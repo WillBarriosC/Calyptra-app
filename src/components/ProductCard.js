@@ -1,27 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, Grid, Row, Text } from "@nextui-org/react";
 import ProductModal from "./ProductModal";
 import product from "../helpers/db.json";
 
 export default function ProductCard({ searchValue }) {
-  const [modalVisible, setModalVisible] = useState(true);
+  const [modalVisible, setModalVisible] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [filteredData, setFilteredData] = useState([]);
 
-  const filteredList = product.list.filter((item) =>
-    item.title.toLowerCase().includes(searchValue.toLowerCase())
-  );
+  useEffect(() => {
+    const filteredList = product.list.filter((item) =>
+      item.title.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    setFilteredData(filteredList);
+  }, [searchValue]);
 
   const handleCardPress = (product) => {
     setSelectedProduct(product);
     setModalVisible(true);
   };
 
+  const handleModalClose = () => {
+    setModalVisible(false);
+  };
+
   return (
-    <Grid.Container gap={2} justify="flex-start" >
-      {filteredList !== null && filteredList.length > 0 ? (
-        filteredList.map((item, index) => (
+    <Grid.Container gap={2} justify="center">
+      {filteredData.length > 0 ? (
+        filteredData.map((item, index) => (
           <Grid xs={6} sm={3} key={index}>
-            <Card isPressable onPress={() => handleCardPress(item)} css={{}}>
+            <Card
+              isPressable
+              onPress={() => handleCardPress(item)}
+            >
               <Card.Body css={{ p: 0 }}>
                 <Card.Image
                   src={"https://nextui.org" + item.img}
@@ -55,10 +66,7 @@ export default function ProductCard({ searchValue }) {
       )}
 
       {modalVisible && selectedProduct && (
-        <ProductModal
-          product={selectedProduct}
-          onClose={() => setModalVisible(false)}
-        />
+        <ProductModal product={selectedProduct} onClose={handleModalClose} />
       )}
     </Grid.Container>
   );

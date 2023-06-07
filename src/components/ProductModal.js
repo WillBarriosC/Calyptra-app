@@ -1,6 +1,22 @@
-import { Image, Modal, Button, Text } from "@nextui-org/react";
+import { useState, useEffect } from "react";
+import { Image, Modal, Text } from "@nextui-org/react";
 
 export default function ProductModal({ product, onClose }) {
+  const [scrollEnabled, setScrollEnabled] = useState(true);
+
+  useEffect(() => {
+    if (scrollEnabled) {
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [scrollEnabled]);
+
+  const handleModalClose = () => {
+    setScrollEnabled(false);
+    onClose();
+  };
   return (
     <Modal
       closeButton
@@ -9,8 +25,8 @@ export default function ProductModal({ product, onClose }) {
       width="600px"
       aria-labelledby="modal-title"
       aria-describedby="modal-description"
-      open
-      onClose={onClose}
+      open={true}
+      onClose={handleModalClose}
     >
       <Modal.Header>
         <Text id="modal-title" weight={"medium"} size={40}>

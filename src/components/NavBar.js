@@ -1,7 +1,7 @@
 import { Navbar, Link, Text } from "@nextui-org/react";
 import Login from "@/components/Login";
 
-export default function App() {
+export default function NavBar() {
   const collapseItems = [
     "Customers",
     "Company",
