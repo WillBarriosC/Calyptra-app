@@ -18,6 +18,7 @@ export default function NavBar() {
         variant="static"
         maxWidth="fluid"
         borderWeight="black"
+        height="6rem"
       >
         <Navbar.Toggle aria-label="toggle navigation" />
         <Navbar.Content>

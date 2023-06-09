@@ -1,11 +1,11 @@
-import React from "react";
+import {useState, useMemo} from "react";
 import { Dropdown, Container } from "@nextui-org/react";
 
 
 export default function FilterItem() {
-  const [selected, setSelected] = React.useState(new Set(["Sort by"]));
+  const [selected, setSelected] = useState(new Set(["Sort by"]));
 
-  const selectedValue = React.useMemo(
+  const selectedValue = useMemo(
     () => Array.from(selected).join(", ").replaceAll("_", " "),
     [selected]
   );

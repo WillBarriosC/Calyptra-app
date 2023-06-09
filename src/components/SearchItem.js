@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import { Input, Spacer } from "@nextui-org/react";
 import FilterItem from "./FilterItem";
 
