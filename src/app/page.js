@@ -24,12 +24,14 @@ export default function Home() {
 
   return (
     <main>
-      <NavBar />
-      <Header scrollHandler={scrollHandler} />
-      <Carousel />
-      <SearchItem ref={plantRef} onSearch={handleSearch} />
-      <ProductCard searchValue={searchValue} />
-      <Footer />
+      <div className="mx-auto overflow-auto px-1">
+        <NavBar />
+        <Header scrollHandler={scrollHandler} />
+        <Carousel />
+        <SearchItem ref={plantRef} onSearch={handleSearch} />
+        <ProductCard searchValue={searchValue} />
+        <Footer />
+      </div>
     </main>
   );
 }

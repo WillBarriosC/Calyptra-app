@@ -19,7 +19,7 @@ export function Carousel() {
   return (
     <>
       <div className="text-center m-10 text-4xl font-bold italic uppercase text-gray-800 sm:text-5xl sm:tracking-tight lg:text-5xl">
-        <p>💚Our healthy products💚</p>
+        <p>🍎Our healthy products🍎</p>
       </div>
 
       <div>
