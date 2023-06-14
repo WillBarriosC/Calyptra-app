@@ -51,6 +51,7 @@ export default function Login() {
             size="lg"
             placeholder="Password"
             contentLeft={<Password fill="currentColor" />}
+            type="password"
           />
           <Row justify="space-between">
             <Checkbox>

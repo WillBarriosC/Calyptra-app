@@ -33,17 +33,17 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScrollMain = () => {
       const scrollY = window.scrollY;
       setShowButton(scrollY > 470);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScrollMain);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScrollMain);
     };
-  }, [scrollY]);
+  }, []);
 
   return (
     <main ref={btnRef}>
